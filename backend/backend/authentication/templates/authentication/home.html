@@ -1,0 +1,38 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Home</title>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+</head>
+{% csrf_token %}
+<body>
+<main class="card">
+
+	{% block title %}
+	<h2>Petfinity Office</h2>
+	{% endblock %}
+	
+	{% block content %}
+	<div class="card">
+
+	<form action="{% url 'logout' %}" method="post">
+    	{% csrf_token %}
+    	<button type="submit">Enter</button>
+	</form>
+
+	</div>
+
+
+	{% endblock %}
+
+	
+</main>
+</body>
+</html>
